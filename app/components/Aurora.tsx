@@ -114,6 +114,7 @@ interface AuroraProps {
   amplitude?: number;
   blend?: number;
   speed?: number;
+  time?: number;
 }
 
 export default function Aurora(props: AuroraProps) {
