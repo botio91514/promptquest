@@ -4,8 +4,12 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent';
 
 export async function POST(request: NextRequest) {
+  let userPrompt = '';
+  let questTitle = '';
+  let questDescription = '';
+  let userId = '';
   try {
-    const { userPrompt, questTitle, questDescription, userId } = await request.json();
+    ({ userPrompt, questTitle, questDescription, userId } = await request.json());
 
     if (!userPrompt) {
       return NextResponse.json({ error: 'User prompt is required' }, { status: 400 });
