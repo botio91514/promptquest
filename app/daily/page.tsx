@@ -148,7 +148,7 @@ export default function DailyPage() {
             >
               🌄 Daily Quest
             </motion.h1>
-            <p className="text-blue-200 text-lg">Today's creative challenge awaits!</p>
+            <p className="text-blue-200 text-lg">Today&apos;s creative challenge awaits!</p>
             
             {/* User Stats */}
             <motion.div
@@ -184,7 +184,7 @@ export default function DailyPage() {
               >
                 ✨
               </motion.div>
-              <h3 className="text-2xl font-bold text-white">Today's Challenge</h3>
+              <h3 className="text-2xl font-bold text-white">Today&apos;s Challenge</h3>
             </div>
             <motion.p 
               className="text-blue-200 text-lg leading-relaxed"

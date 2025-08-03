@@ -281,7 +281,7 @@ export default function Home() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <Calendar className="w-4 h-4 md:w-5 md:h-5" />
-                    <span className="hidden sm:inline">📅 Today's Daily Quest</span>
+                    <span className="hidden sm:inline">📅 Today&apos;s Daily Quest</span>
                     <span className="sm:hidden">📅 Daily Quest</span>
                     <Sparkles className="w-4 h-4 md:w-5 md:h-5" />
                   </motion.a>
