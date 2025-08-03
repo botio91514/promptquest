@@ -173,7 +173,11 @@ Please analyze this response and provide detailed feedback in the specified JSON
     console.error('Gemini Feedback Error:', error);
     
     // If it's a network error, provide a more helpful fallback
-    if (error.message && error.message.includes('fetch failed')) {
+    let errMsg = '';
+    if (typeof error === 'object' && error && 'message' in error && typeof (error as any).message === 'string') {
+      errMsg = (error as any).message;
+    }
+    if (errMsg.includes('fetch failed')) {
       console.error('Network connectivity issue detected. Using fallback feedback.');
       return NextResponse.json({
         score: 7,
