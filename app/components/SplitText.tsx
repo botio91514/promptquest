@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, CSSProperties } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText as GSAPSplitText } from "gsap/SplitText";
@@ -16,7 +16,7 @@ interface SplitTextProps {
   to?: { opacity: number; y: number };
   threshold?: number;
   rootMargin?: string;
-  textAlign?: string;
+  textAlign?: CSSProperties["textAlign"];
   onLetterAnimationComplete: () => void;
 }
 
@@ -152,7 +152,7 @@ const SplitText = ({
       ref={ref}
       className={`split-parent ${className}`}
       style={{
-        textAlign,
+        textAlign: textAlign as CSSProperties["textAlign"],
         overflow: "hidden",
         display: "inline-block",
         whiteSpace: "normal",
