@@ -23,8 +23,8 @@ export default function AboutPage() {
           duration={0.7}
           ease="power3.out"
           splitType="chars"
-          from={{ opacity: 0, y: 30, scale: 0.9 }}
-          to={{ opacity: 1, y: 0, scale: 1 }}
+          from={{ opacity: 0, y: 30 }}
+          to={{ opacity: 1, y: 0 }}
           threshold={0.1}
           rootMargin="-50px"
           textAlign="center"
