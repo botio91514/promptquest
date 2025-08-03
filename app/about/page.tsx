@@ -28,6 +28,7 @@ export default function AboutPage() {
           threshold={0.1}
           rootMargin="-50px"
           textAlign="center"
+          onLetterAnimationComplete={() => {}}
         />
         <p className="text-blue-200 text-lg mb-6 text-center">
           A gamified prompt-solving tool to boost imagination, AI literacy, and creative writing through XP quests.
