@@ -60,7 +60,7 @@ const SplitText = ({
       return;
     }
 
-    let targets;
+    let targets: any;
     switch (splitType) {
       case "lines":
         targets = splitter.lines;
@@ -81,7 +81,7 @@ const SplitText = ({
       return;
     }
 
-    targets.forEach((t) => {
+    targets.forEach((t: HTMLElement) => {
       t.style.willChange = "transform, opacity";
     });
 
