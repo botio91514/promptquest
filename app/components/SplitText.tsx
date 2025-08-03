@@ -34,7 +34,7 @@ const SplitText = ({
   textAlign = "center",
   onLetterAnimationComplete,
 }: SplitTextProps) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
   const scrollTriggerRef = useRef(null);
 
