@@ -4,6 +4,28 @@ import { useEffect, useRef, useState, createElement } from "react";
 import { gsap } from "gsap";
 import "./TextType.css";
 
+interface TextTypeProps {
+  text: string | string[];
+  as?: keyof JSX.IntrinsicElements;
+  typingSpeed?: number;
+  initialDelay?: number;
+  pauseDuration?: number;
+  deletingSpeed?: number;
+  loop?: boolean;
+  className?: string;
+  showCursor?: boolean;
+  hideCursorWhileTyping?: boolean;
+  cursorCharacter?: string;
+  cursorClassName?: string;
+  cursorBlinkDuration?: number;
+  textColors?: string[];
+  variableSpeed?: { min: number; max: number };
+  onSentenceComplete?: (sentence: string, index: number) => void;
+  startOnVisible?: boolean;
+  reverseMode?: boolean;
+  [key: string]: any;
+}
+
 const TextType = ({
   text,
   as: Component = "div",
@@ -24,14 +46,14 @@ const TextType = ({
   startOnVisible = false,
   reverseMode = false,
   ...props
-}) => {
+}: TextTypeProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
-  const cursorRef = useRef(null);
-  const containerRef = useRef(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const textArray = Array.isArray(text) ? text : [text];
 
