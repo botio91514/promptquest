@@ -109,7 +109,14 @@ void main() {
 }
 `;
 
-export default function Aurora(props) {
+interface AuroraProps {
+  colorStops?: string[];
+  amplitude?: number;
+  blend?: number;
+  speed?: number;
+}
+
+export default function Aurora(props: AuroraProps) {
   const {
     colorStops = ["#5227FF", "#7cff67", "#5227FF"],
     amplitude = 1.0,
