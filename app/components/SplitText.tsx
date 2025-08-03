@@ -36,7 +36,7 @@ const SplitText = ({
 }: SplitTextProps) => {
   const ref = useRef<HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
-  const scrollTriggerRef = useRef(null);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !ref.current || !text) return;
