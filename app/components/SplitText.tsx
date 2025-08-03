@@ -48,7 +48,7 @@ const SplitText = ({
     const absoluteLines = splitType === "lines";
     if (absoluteLines) el.style.position = "relative";
 
-    let splitter;
+    let splitter: any;
     try {
       splitter = new GSAPSplitText(el, {
         type: splitType,
